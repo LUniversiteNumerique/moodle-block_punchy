@@ -2,11 +2,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class punchy extends block_base
+class block_punchy extends block_base
 {
     public function init()
     {
-        $this->title = get_string('pluginname', 'punchy');
+        $this->title = get_string('pluginname', 'block_punchy');
     }
 
     public function instance_allow_multiple()
