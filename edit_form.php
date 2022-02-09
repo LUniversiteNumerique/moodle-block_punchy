@@ -15,8 +15,7 @@ class block_punchy_edit_form extends block_edit_form
         $mform->setType('config_title', PARAM_TEXT);
 
         // MODIFIER LE CONTENU DU BLOC
-        $mform->addElement('editor', 'config_text', get_string('blockstring', 'block_punchy'));
-        $mform->setDefault('config_text', '');
-        $mform->setType('config_text', PARAM_TEXT);
+        $mform->addElement('editor', 'config_text', get_string('blockstring', 'block_punchy'), null, get_string('defaulttext', 'block_punchy'));
+        $mform->setType('config_text', PARAM_RAW);
     }
 }
