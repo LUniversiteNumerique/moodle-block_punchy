@@ -38,18 +38,12 @@ class block_punchy extends block_base
 
     public function specialization()
     {
-        if (isset($this->config)) {
-            if (empty($this->config->title)) {
-                $this->title = get_string('defaulttitle', 'block_punchy');
-            } else {
-                $this->title = $this->config->title;
-            }
+        $defaulttitle = get_string('defaulttitle', 'block_punchy');
+        $defaulttext = get_string('defaulttext', 'block_punchy');
 
-            if (empty($this->config->text)) {
-                $this->text = get_string('defaulttext', 'block_punchy');
-            } else {
-                $this->text = $this->config->text;
-            }
+        if (isset($this->config)) {
+            $this->title = empty($this->config->title) ? $defaulttitle : $this->config->title;
+            $this->text = empty($this->config->text) ? $defaulttext : $this->config->text;
         }
     }
 }
