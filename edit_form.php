@@ -13,5 +13,10 @@ class block_punchy_edit_form extends block_edit_form
         $mform->addElement('text', 'config_title', get_string('blocktitle', 'block_punchy'));
         $mform->setDefault('config_title', "Partageons l'Université Numérique et des Cursus HYbrides");
         $mform->setType('config_title', PARAM_TEXT);
+
+        // MODIFIER LE CONTENU DU BLOC
+        $mform->addElement('editor', 'config_text', get_string('blockstring', 'block_punchy'));
+        $mform->setDefault('config_text', '');
+        $mform->setType('config_text', PARAM_TEXT);
     }
 }
