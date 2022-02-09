@@ -29,6 +29,10 @@ class block_punchy extends block_base
         $this->content = new stdClass();
         $text = get_string('defaulttext', 'block_punchy');
 
+        if (!empty($this->config->text['text'])) {
+            $text = $this->config->text['text'];
+        }
+
         $content = new \block_punchy\output\content($text);
         $renderer = $this->page->get_renderer('block_punchy');
         $this->content->text = $renderer->render($content);
@@ -45,5 +49,16 @@ class block_punchy extends block_base
             $this->title = empty($this->config->title) ? $defaulttitle : $this->config->title;
             $this->text = empty($this->config->text) ? $defaulttext : $this->config->text;
         }
+    }
+
+    public function applicable_formats()
+    {
+        return array(
+            'admin' => false,
+            'site-index' => false,
+            'course-view' => true,
+            'mod' => true,
+            'my' => false,
+        );
     }
 }
