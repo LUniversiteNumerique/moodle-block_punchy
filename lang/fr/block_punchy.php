@@ -26,7 +26,7 @@ $string['pluginname'] = 'PUNCHY';
 $string['title'] = 'Partageons l\'Université Numérique et des Cursus HYbrides';
 $string['blocktitle'] = 'Modifier le titre :';
 $string['blockstring'] = 'Modifier le contenu :';
-$string['defaulttitle'] = "Partageons l'Université Numérique et des Cursus HYbrides";
+$string['defaulttitle'] = 'Partageons l\'Université Numérique et des Cursus HYbrides';
 $string['defaulttext'] = '<p>Un projet de L\'Université Numérique alliée à un consortium de partenaires :<p>
 <ul>
     <li>Pour répondre à une forte demande de supports de formations hybrides facilement réutilisables</li>
