@@ -26,7 +26,7 @@ class block_punchy extends block_base
 {
     public function init()
     {
-        $this->title = get_string('pluginname', 'block_punchy');
+        $this->title = get_string('defaulttitle', 'block_punchy');
     }
 
     public function instance_allow_multiple()
