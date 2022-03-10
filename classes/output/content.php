@@ -31,16 +31,26 @@ use templatable;
 class content implements renderable, templatable
 {
     public $text;
-
-    public function __construct($text)
+    public $image;
+    
+    /**
+     * Constructor.
+     *
+     * @param  string $text
+     * @param  string $image
+     * @return void
+     */
+    public function __construct($text, $image)
     {
         $this->text = $text;
+        $this->image = $image;
     }
 
     public function export_for_template(renderer_base $output)
     {
         $data = array(
             'content' => $this->text,
+            'image' => $output->image_url($this->image, 'block_punchy')->out(),
         );
         return $data;
     }

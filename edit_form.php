@@ -37,5 +37,17 @@ class block_punchy_edit_form extends block_edit_form
         // Block text.
         $mform->addElement('editor', 'config_text', get_string('blockstring', 'block_punchy'));
         $mform->setType('config_text', PARAM_RAW);
+
+        // Images.
+        $options = array(
+            'aunege-punchy' => 'AUNEGE',
+            'iutenligne-punchy' => 'IUTenLigne',
+            'uness-punchy' => 'UNESS',
+            'unit-punchy' => 'UNIT',
+            'uoh-punchy' => 'UOH',
+            'uved-punchy' => 'UVED'
+        );
+        $mform->addElement('select', 'config_image', get_string('image', 'block_punchy'), $options);
+        $mform->setDefault('config_image', 'unit-punchy');
     }
 }

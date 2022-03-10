@@ -47,13 +47,14 @@ class block_punchy extends block_base
     public function get_content()
     {
         $this->content = new stdClass();
+        $image = $this->config && $this->config->image ? $this->config->image : 'unit-punchy';
         $text = get_string('defaulttext', 'block_punchy');
 
         if (!empty($this->config->text['text'])) {
             $text = $this->config->text['text'];
         }
 
-        $content = new \block_punchy\output\content($text);
+        $content = new \block_punchy\output\content($text, $image);
         $renderer = $this->page->get_renderer('block_punchy');
         $this->content->text = $renderer->render($content);
 
