@@ -34,3 +34,4 @@ $string['defaulttext'] = '<p>Un projet de L\'Université Numérique alliée à u
     numériques à large potentiel de réutilisation, révision et adaptation à des contextes divers</li>
 </ul>';
 $string['imagealt'] = 'Logos France Relance, Gouvernement, L\'Université Numérique, Fondation UNIT, Union Européenne';
+$string['image'] = 'Image du bloc';

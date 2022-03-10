@@ -34,3 +34,4 @@ $string['defaulttext'] = '<p>A project of the Digital University allied to a con
     resources with a large potential for reuse, revision and adaptation to various contexts</li>
 </ul>';
 $string['imagealt'] = 'Logos of France Relance, Government of France, L\'Université Numérique, Fondation UNIT, European Union';
+$string['image'] = 'Image of the block';
