@@ -35,6 +35,7 @@ class configure_page implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
+        $namehelp = new help_icon('cc_licence_name_desc', 'block_punchy');
         $licencehelp = new help_icon('cc_licence_url_desc', 'block_punchy');
         $imagehelp = new help_icon('cc_image_url_desc', 'block_punchy');
 
@@ -46,6 +47,7 @@ class configure_page implements renderable, templatable {
         $deleteurl = new moodle_url('/blocks/punchy/deletelicence.php', array('sesskey' => sesskey(), 'returnto' => 'configure'));
         $data->deleteurl = $deleteurl->out();
 
+        $data->namehelp = $namehelp;
         $data->licencehelp = $licencehelp;
         $data->imagehelp = $imagehelp;
 

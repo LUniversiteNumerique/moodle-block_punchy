@@ -58,11 +58,18 @@ class block_punchy extends block_base
         }
 
         if (!$licence = get_licence($licenceid)) {
+            $licencename = null;
             $licenceurl = null;
             $licenceimage = null;
         }
 
-        $content = new \block_punchy\output\content($text, $image, $licence->licenceurl, $licence->licenceimage);
+        $content = new \block_punchy\output\content(
+            $text,
+            $image,
+            $licence->name,
+            $licence->licenceurl,
+            $licence->licenceimage
+        );
         $renderer = $this->page->get_renderer('block_punchy');
         $this->content->text = $renderer->render($content);
 

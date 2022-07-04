@@ -35,6 +35,8 @@ $string['defaulttext'] = '<p>Un projet de L\'Université Numérique alliée à u
 </ul>';
 $string['imagealt'] = 'Logos France Relance, Gouvernement, L\'Université Numérique, Fondation UNIT, Union Européenne';
 $string['image'] = 'Image du bloc';
+$string['cc_licence_name'] = 'Nom de la licence CC';
+$string['cc_licence_name_desc'] = 'Nom destiné à l\'affichage de la licence CC.';
 $string['cc_licence_url'] = 'CC licence URL';
 $string['cc_licence_url_desc'] = 'Ajoute une nouvelle URL de licence Creative Commons (ex : https://creativecommons.org/licenses/by-nc-sa/4.0/).';
 $string['cc_image_url'] = 'CC licence image URL';

@@ -30,11 +30,13 @@ require_once("$CFG->dirroot/blocks/punchy/locallib.php");
 require_login(0, false);
 admin_externalpage_setup('manageblocks');
 
+$configurenameparam    = optional_param('cc-licence-name', '', PARAM_TEXT);
 $configurelicenceparam = optional_param('cc-licence-url', '', PARAM_URL);
 $configureimageparam   = optional_param('cc-image-url', '', PARAM_URL);
 
 if ($configurelicenceparam && $configureimageparam) {
     $licence = new stdClass();
+    $licence->licencename = $configurenameparam;
     $licence->licenceurl = $configurelicenceparam;
     $licence->licenceimage = $configureimageparam;
     cc_add_licence($licence);

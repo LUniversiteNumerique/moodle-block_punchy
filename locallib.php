@@ -5,8 +5,8 @@ defined('MOODLE_INTERNAL') || die;
 
 function cc_add_licence($licence) {
     global $DB;
-
-    if ($licence->licenceurl && $licence->licenceimage) {
+    print_r($licence);
+    if ($licence->licencename && $licence->licenceurl && $licence->licenceimage) {
         $id = $DB->insert_record('block_punchy_licences', $licence);
 
         if ($id) {

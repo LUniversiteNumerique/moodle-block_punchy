@@ -1,5 +1,19 @@
 <form id="cartridge-registration-form" class="form-horizontal">
     <div class="control-group">
+        <div class ="control-label">
+            <label for="registration-secret">{{#str}} cc_licence_name, block_punchy {{/str}}</label>
+            {{#namehelp}}
+                {{>core/help_icon}}
+            {{/namehelp}}
+        </div>
+        <div class="controls">
+            <input name="cc-licence-name"
+                class="input-block-level form-control"
+                type="text"
+                id="cc-licence-name">
+        </div>
+    </div>
+    <div class="control-group">
         <div class="control-label">
             <label for="registration-key">{{#str}} cc_licence_url, block_punchy {{/str}}</label>
             {{#licencehelp}}

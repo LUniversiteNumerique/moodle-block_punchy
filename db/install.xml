@@ -7,6 +7,7 @@
     <TABLE NAME="block_punchy_licences" COMMENT="Storing the licences added through the block management.">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="licencename" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false"/>
         <FIELD NAME="licenceurl" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false"/>
         <FIELD NAME="licenceimage" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
