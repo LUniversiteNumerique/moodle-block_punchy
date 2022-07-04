@@ -32,6 +32,13 @@ admin_externalpage_setup('manageblocks');
 $configurelicenceparam = optional_param('cc-licence-url', '', PARAM_URL);
 $configureimageparam   = optional_param('cc-image-url', '', PARAM_URL);
 
+if ($configurelicenceparam && $configureimageparam) {
+    $licence = new stdClass();
+    $licence->licenceurl = $configurelicenceparam;
+    $licence->licenceimg = $configureimageparam;
+    cc_add_licence($licence);
+}
+
 $pageurl = new moodle_url('/block/punchy/configure.php');
 $PAGE->set_url($pageurl);
 $PAGE->set_title("{$SITE->shortname}: " . get_string('toolregistration', 'mod_lti'));
