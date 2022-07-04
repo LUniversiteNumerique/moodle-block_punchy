@@ -32,18 +32,27 @@ class content implements renderable, templatable
 {
     public $text;
     public $image;
+    public $licencename;
+    public $licenceurl;
+    public $licenceimage;
     
     /**
      * Constructor.
      *
      * @param  string $text
      * @param  string $image
+     * @param  string $licencename
+     * @param  string $licenceurl
+     * @param  string $licenceimage
      * @return void
      */
-    public function __construct($text, $image)
+    public function __construct($text, $image, $licencename, $licenceurl, $licenceimage)
     {
         $this->text = $text;
         $this->image = $image;
+        $this->licencename = $licencename;
+        $this->licenceurl = $licenceurl;
+        $this->licenceimage = $licenceimage;
     }
 
     public function export_for_template(renderer_base $output)
@@ -51,6 +60,9 @@ class content implements renderable, templatable
         $data = array(
             'content' => $this->text,
             'image' => $output->image_url($this->image, 'block_punchy')->out(),
+            'licencename' => $this->licencename,
+            'licenceurl' => $this->licenceurl,
+            'licenceimage' => $this->licenceimage,
         );
         return $data;
     }

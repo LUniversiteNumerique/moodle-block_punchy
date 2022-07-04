@@ -15,17 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * PUNCHY block
+ * PUNCHY block settings
  *
  * @package    block_punchy
  * @copyright  2022 L'Université Numérique
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2022070408;
-$plugin->requires = 2016052300;
-$plugin->release = '1.2.0';
-$plugin->component = 'block_punchy';
-$plugin->maturity = MATURITY_STABLE;
+if ($ADMIN->fulltree) {
+    global $DB;
+
+}

@@ -35,3 +35,15 @@ $string['defaulttext'] = '<p>A project of the Digital University allied to a con
 </ul>';
 $string['imagealt'] = 'Logos of France Relance, Government of France, L\'Université Numérique, Fondation UNIT, European Union';
 $string['image'] = 'Image of the block';
+$string['cc_licence_name'] = 'CC licence name';
+$string['cc_licence_name_desc'] = 'The name of the CC licence for display.';
+$string['cc_licence_url'] = 'CC licence URL';
+$string['cc_licence_url_desc'] = 'Add a new Creative Commons licence URL (ex : https://creativecommons.org/licenses/by-nc-sa/4.0/).';
+$string['cc_image_url'] = 'CC licence image URL';
+$string['cc_image_url_desc'] = 'Add a new Creative Commons licence URL (ex : https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.png).';
+$string['configuration'] = 'Configuration';
+$string['licences'] = 'Licences';
+$string['licence'] = 'Licence';
+$string['licenceofthecontent'] = 'Licence of the content';
+$string['errorinsertingrecord'] = 'Error trying to insert the record';
+$string['errordeletingrecord'] = 'Error trying to delete the record';

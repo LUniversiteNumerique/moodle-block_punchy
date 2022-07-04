@@ -28,9 +28,26 @@ use plugin_renderer_base;
 
 class renderer extends plugin_renderer_base
 {
-    public function reader_content(content $output)
+    /**
+     *
+     * @param content $output
+     *
+     * @return string html for the page
+     */
+    public function render_content(content $output)
     {
         $data = $output->export_for_template($this);
         return parent::render_from_template('block_punchy/content', $data);
+    }
+
+    /**
+     *
+     * @param configure_page $output
+     *
+     * @return string html for the page
+     */
+    public function render_configure_page(configure_page $output) {
+        $data = $output->export_for_template($this);
+        return parent::render_from_template('block_punchy/configure_page', $data);
     }
 }

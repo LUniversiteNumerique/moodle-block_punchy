@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once("$CFG->dirroot/blocks/punchy/locallib.php");
+
 class block_punchy extends block_base
 {
     public function init()
@@ -48,13 +50,27 @@ class block_punchy extends block_base
     {
         $this->content = new stdClass();
         $image = $this->config && $this->config->image ? $this->config->image : 'unit-punchy';
+        $licenceid = $this->config && $this->config->licence ? $this->config->licence : null;
         $text = get_string('defaulttext', 'block_punchy');
 
         if (!empty($this->config->text['text'])) {
             $text = $this->config->text['text'];
         }
 
-        $content = new \block_punchy\output\content($text, $image);
+        if (!$licence = get_licence($licenceid)) {
+            $licence = new \stdClass();
+            $licence->licencename = null;
+            $licence->licenceurl = null;
+            $licence->licenceimage = null;
+        }
+
+        $content = new \block_punchy\output\content(
+            $text,
+            $image,
+            $licence->licencename,
+            $licence->licenceurl,
+            $licence->licenceimage
+        );
         $renderer = $this->page->get_renderer('block_punchy');
         $this->content->text = $renderer->render($content);
 

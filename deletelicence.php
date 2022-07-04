@@ -15,17 +15,30 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * PUNCHY block
+ * PUNCHY block settings
  *
  * @package    block_punchy
  * @copyright  2022 L'Université Numérique
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+require_once('../../config.php');
+require_once($CFG->libdir.'/adminlib.php');
+require_once("$CFG->dirroot/blocks/punchy/locallib.php");
 
-$plugin->version = 2022070408;
-$plugin->requires = 2016052300;
-$plugin->release = '1.2.0';
-$plugin->component = 'block_punchy';
-$plugin->maturity = MATURITY_STABLE;
+// No guest autologin.
+require_login(0, false);
+require_sesskey();
+admin_externalpage_setup('manageblocks');
+
+$itemid = required_param('itemid', PARAM_INT);
+$returnto = optional_param('returnto', '', PARAM_ALPHA);
+$returnurl = $CFG->wwwroot;
+
+if ($returnto == 'configure') {
+    $returnurl = new moodle_url($CFG->wwwroot . '/blocks/punchy/configure.php');
+}
+
+if ($itemid) {
+    delete_licence($itemid, $returnurl);
+}
