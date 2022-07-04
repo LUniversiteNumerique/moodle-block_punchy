@@ -22,10 +22,20 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2022070409;
-$plugin->requires = 2016052300;
-$plugin->release = '1.2.0';
-$plugin->component = 'block_punchy';
-$plugin->maturity = MATURITY_STABLE;
+if ($ADMIN->fulltree) {
+    $configureurl = "{$CFG->wwwroot}/blocks/punchy/configure.php?action=add&amp;sesskey={$USER->sesskey}";
+    $configurestr = get_string('configuration', 'block_punchy');
+
+    $template = <<< EOD
+    <div class="yui-content">
+        <div>
+            <div><a style="margin-top:.25em" href="{$configureurl}">{$configurestr}</a></div>
+        </div>
+    </div>
+    EOD;
+  
+    $settings->add(new admin_setting_heading('block_punchy', new lang_string('configuration_settings', 'block_punchy') .
+        null, $template));
+}

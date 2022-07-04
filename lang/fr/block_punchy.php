@@ -42,6 +42,7 @@ $string['cc_licence_url_desc'] = 'Ajoute une nouvelle URL de licence Creative Co
 $string['cc_image_url'] = 'CC licence image URL';
 $string['cc_image_url_desc'] = 'Ajoute une nouvelle URL vers une image de licence Creative Commons (ex : https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.png).';
 $string['configuration'] = 'Configuration';
+$string['configuration_settings'] = 'Réglages de configuration';
 $string['licences'] = 'Licences';
 $string['licence'] = 'Licence';
 $string['licenceofthecontent'] = 'Licence du contenu';
