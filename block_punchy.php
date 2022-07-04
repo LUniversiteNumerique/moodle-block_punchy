@@ -58,15 +58,16 @@ class block_punchy extends block_base
         }
 
         if (!$licence = get_licence($licenceid)) {
-            $licencename = null;
-            $licenceurl = null;
-            $licenceimage = null;
+            $licence = new \stdClass();
+            $licence->licencename = null;
+            $licence->licenceurl = null;
+            $licence->licenceimage = null;
         }
 
         $content = new \block_punchy\output\content(
             $text,
             $image,
-            $licence->name,
+            $licence->licencename,
             $licence->licenceurl,
             $licence->licenceimage
         );
