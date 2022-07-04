@@ -58,7 +58,7 @@ class content implements renderable, templatable
             'content' => $this->text,
             'image' => $output->image_url($this->image, 'block_punchy')->out(),
             'licenceurl' => $this->licenceurl,
-            'licenceimage' => $output->image_url($this->licenceimage, 'block_punchy')->out(),
+            'licenceimage' => $this->licenceimage,
         );
         return $data;
     }

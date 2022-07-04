@@ -4,3 +4,13 @@
     <img src="{{image}}" alt="{{#str}} imagealt, block_punchy {{/str}}" title="{{#str}} imagealt, block_punchy {{/str}}" />
 </div>
 
+{{#licenceurl}}
+{{#licenceimage}}
+<div class="licence-infos">
+    <h5>{{#str}} licenceofthecontent, block_punchy {{/str}}</h5>
+    <a href="{{{licenceurl}}}">
+        <img src="{{licenceimage}}" alt="{{#str}} imagealt, block_punchy {{/str}}" title="{{#str}} imagealt, block_punchy {{/str}}" />
+    </a>
+</div>
+{{/licenceimage}}
+{{/licenceurl}}
