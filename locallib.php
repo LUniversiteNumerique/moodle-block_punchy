@@ -38,3 +38,19 @@ function delete_licence($itemid, $redirecto) {
     }
     throw new moodle_exception('errordeletingrecord', 'block_punchy');
 }
+
+function get_licences_names() {
+    global $DB;
+
+    $licences = $DB->get_records('block_punchy_licences');
+    $items = [];
+    foreach($licences as $licence) {
+        $licencename = $licence->licenceurl;
+        if (strpos($licence->licenceurl, 'creativecommons.org') !== false) {
+            $licenceexp = explode('/', $licence->licenceurl);
+            $licencename = $licenceexp[count($licenceexp)-3];
+        }
+        array_push($items, $licencename);
+    }
+    return $items;
+}

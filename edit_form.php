@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once("$CFG->dirroot/blocks/punchy/locallib.php");
+
 class block_punchy_edit_form extends block_edit_form
 {
     protected function specific_definition($mform)
@@ -49,5 +51,10 @@ class block_punchy_edit_form extends block_edit_form
         );
         $mform->addElement('select', 'config_image', get_string('image', 'block_punchy'), $options);
         $mform->setDefault('config_image', 'unit-punchy');
+
+        // Licences.
+        $licences = get_licences_names();
+        $mform->addElement('select', 'config_licences', get_string('licences', 'block_punchy'), $licences);
+        $mform->setDefault('config_licence', '');
     }
 }
