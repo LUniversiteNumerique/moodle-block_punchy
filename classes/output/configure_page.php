@@ -14,18 +14,28 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * PUNCHY block
- *
- * @package    block_punchy
- * @copyright  2022 L'Université Numérique
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 
-defined('MOODLE_INTERNAL') || die();
+namespace block_punchy\output;
 
-$plugin->version = 2022063001;
-$plugin->requires = 2016052300;
-$plugin->release = '1.0.1';
-$plugin->component = 'block_punchy';
-$plugin->maturity = MATURITY_STABLE;
+//require_once($CFG->dirroot.'/blocks/punchy/locallib.php');
+
+use moodle_url;
+use renderable;
+use templatable;
+use renderer_base;
+use stdClass;
+use help_icon;
+
+
+class configure_page implements renderable, templatable {
+    /**
+     * Export this data so it can be used as the context for a mustache template.
+     *
+     * @param renderer_base $output The renderer
+     * @return stdClass
+     */
+    public function export_for_template(renderer_base $output) {
+        $data = new stdClass();
+        return $data;
+    }
+}

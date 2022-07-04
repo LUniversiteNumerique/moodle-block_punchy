@@ -15,17 +15,31 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * PUNCHY block
+ * PUNCHY block settings
  *
  * @package    block_punchy
  * @copyright  2022 L'Université Numérique
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2022063001;
-$plugin->requires = 2016052300;
-$plugin->release = '1.0.1';
-$plugin->component = 'block_punchy';
-$plugin->maturity = MATURITY_STABLE;
+require_once("$CFG->dirroot/blocks/punchy/locallib.php");
+
+if ($ADMIN->fulltree) {
+    global $DB;
+
+    $settings->add(new admin_setting_configtext(
+        'punchy/cc_licence_url',
+        get_string('cc_licence_url', 'block_punchy'),
+        get_string('cc_licence_url_desc', 'block_punchy'),
+        ''
+    ));
+
+    $settings->add(new admin_setting_configtext(
+        'punchy/cc_image_url',
+        get_string('cc_image_url', 'block_punchy'),
+        get_string('cc_image_url_desc', 'block_punchy'),
+        ''
+    ));
+}

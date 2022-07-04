@@ -1,0 +1,37 @@
+<form id="cartridge-registration-form" class="form-horizontal">
+    <div class="control-group">
+        <div class="control-label">
+            <label for="registration-key">{{#str}} cc_licence_url, block_punchy {{/str}}</label>
+            {{#cc_licence_url_help}}
+                {{>core/help_icon}}
+            {{/cc_licence_url_help}}
+        </div>
+        <div class="controls">
+            <input name="cc-licence-url"
+                class="input-block-level form-control"
+                type="text"
+                id="cc-licence-url">
+        </div>
+    </div>
+    <div class="control-group">
+        <div class ="control-label">
+            <label for="registration-secret">{{#str}} cc_image_url, block_punchy {{/str}}</label>
+            {{#cc_image_url_help}}
+                {{>core/help_icon}}
+            {{/cc_image_url_help}}
+        </div>
+        <div class="controls">
+            <input name="cc-image-url"
+                class="input-block-level form-control"
+                type="text"
+                id="cc-image-url">
+        </div>
+    </div>
+    <div class="control-group mt-3">
+        <div class="controls">
+            <button id="cartridge-registration-submit" type="submit" class="btn btn-success">
+                <span class="btn-text">{{#str}} savechanges {{/str}}</span>
+            </button>
+        </div>
+    </div>
+</form>
