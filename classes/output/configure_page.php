@@ -42,6 +42,9 @@ class configure_page implements renderable, templatable {
         $data = new stdClass();
         $data->licences = $licences;
 
+        $deleteurl = new moodle_url('/blocks/punchy/deletelicence.php', array('sesskey' => sesskey(), 'returnto' => 'configure'));
+        $data->deleteurl = $deleteurl->out();
+
         return $data;
     }
 }

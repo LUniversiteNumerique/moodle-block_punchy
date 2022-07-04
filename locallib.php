@@ -27,3 +27,14 @@ function get_licences() {
     }
     return $items;
 }
+
+function delete_licence($itemid, $redirecto) {
+    global $DB;
+
+    $params = ['id' => $itemid];
+    if ($DB->delete_records('block_punchy_licences', $params)) {
+        $redirecto = new moodle_url('/blocks/punchy/configure.php');
+        redirect($redirecto);
+    }
+    throw new moodle_exception('errordeletingrecord', 'block_punchy');
+}
