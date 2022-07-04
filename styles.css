@@ -5,3 +5,19 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.block_punchy .content .licence-infos {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.block_punchy .content .licence-infos a {
+    display: flex;
+    align-self: flex-start;
+}
+
+.block_punchy .content .licence-infos img {
+    max-height: 34px;
+    width: auto;
+}
