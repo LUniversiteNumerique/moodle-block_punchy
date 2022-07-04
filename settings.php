@@ -24,22 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once("$CFG->dirroot/blocks/punchy/locallib.php");
-
 if ($ADMIN->fulltree) {
     global $DB;
 
-    $settings->add(new admin_setting_configtext(
-        'punchy/cc_licence_url',
-        get_string('cc_licence_url', 'block_punchy'),
-        get_string('cc_licence_url_desc', 'block_punchy'),
-        ''
-    ));
-
-    $settings->add(new admin_setting_configtext(
-        'punchy/cc_image_url',
-        get_string('cc_image_url', 'block_punchy'),
-        get_string('cc_image_url_desc', 'block_punchy'),
-        ''
-    ));
 }
