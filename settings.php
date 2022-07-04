@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * PUNCHY block settings
+ * PUNCHY block
  *
  * @package    block_punchy
  * @copyright  2022 L'Université Numérique
@@ -25,6 +25,17 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    global $DB;
+    $configureurl = "{$CFG->wwwroot}/blocks/punchy/configure.php?action=add&amp;sesskey={$USER->sesskey}";
+    $configurestr = get_string('configuration', 'block_punchy');
 
+    $template = <<< EOD
+    <div class="yui-content">
+        <div>
+            <div><a style="margin-top:.25em" href="{$configureurl}">{$configurestr}</a></div>
+        </div>
+    </div>
+    EOD;
+  
+    $settings->add(new admin_setting_heading('block_punchy', new lang_string('configuration_settings', 'block_punchy') .
+        null, $template));
 }

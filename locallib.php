@@ -45,13 +45,7 @@ function get_licences_names() {
     $licences = $DB->get_records('block_punchy_licences');
     $items = [];
     foreach($licences as $licence) {
-        $licencename = $licence->licenceurl;
-        if (strpos($licence->licenceurl, 'creativecommons.org') !== false) {
-            $licenceexp = explode('/', $licence->licenceurl);
-            $licencename = $licenceexp[count($licenceexp)-3];
-        }
-
-        $items[$licence->id] = $licencename;
+        $items[$licence->id] = $licence->licencename;
     }
     return $items;
 }
