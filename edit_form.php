@@ -54,7 +54,7 @@ class block_punchy_edit_form extends block_edit_form
 
         // Licences.
         $licences = get_licences_names();
-        $mform->addElement('select', 'config_licences', get_string('licences', 'block_punchy'), $licences);
+        $mform->addElement('select', 'config_licence', get_string('licences', 'block_punchy'), $licences);
         $mform->setDefault('config_licence', '');
     }
 }

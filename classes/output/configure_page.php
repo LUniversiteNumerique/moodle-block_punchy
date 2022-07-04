@@ -35,8 +35,6 @@ class configure_page implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
-        global $DB;
-
         $licencehelp = new help_icon('cc_licence_url_desc', 'block_punchy');
         $imagehelp = new help_icon('cc_image_url_desc', 'block_punchy');
 

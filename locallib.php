@@ -50,7 +50,16 @@ function get_licences_names() {
             $licenceexp = explode('/', $licence->licenceurl);
             $licencename = $licenceexp[count($licenceexp)-3];
         }
-        array_push($items, $licencename);
+
+        $items[$licence->id] = $licencename;
     }
     return $items;
+}
+
+
+function get_licence($id) {
+    global $DB;
+
+    $licence = $DB->get_record('block_punchy_licences', array('id' => $id));
+    return $licence;
 }
