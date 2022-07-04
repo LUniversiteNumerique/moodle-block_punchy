@@ -40,3 +40,5 @@ $string['cc_licence_url_desc'] = 'Add a new Creative Commons licence URL (ex : h
 $string['cc_image_url'] = 'CC licence image URL';
 $string['cc_image_url_desc'] = 'Add a new Creative Commons licence URL (ex : https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.png).';
 $string['errorinsertingrecord'] = 'Error trying to insert the record';
+$string['configuration'] = 'Configuration';
+$string['licences'] = 'Licences';

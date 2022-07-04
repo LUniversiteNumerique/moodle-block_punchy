@@ -35,17 +35,13 @@ $configureimageparam   = optional_param('cc-image-url', '', PARAM_URL);
 if ($configurelicenceparam && $configureimageparam) {
     $licence = new stdClass();
     $licence->licenceurl = $configurelicenceparam;
-    $licence->licenceimg = $configureimageparam;
+    $licence->licenceimage = $configureimageparam;
     cc_add_licence($licence);
 }
 
-$pageurl = new moodle_url('/block/punchy/configure.php');
+$pageurl = new moodle_url('/blocks/punchy/configure.php');
 $PAGE->set_url($pageurl);
-$PAGE->set_title("{$SITE->shortname}: " . get_string('toolregistration', 'mod_lti'));
-$PAGE->requires->string_for_js('success', 'moodle');
-$PAGE->requires->string_for_js('error', 'moodle');
-$PAGE->requires->string_for_js('successfullycreatedtooltype', 'mod_lti');
-$PAGE->requires->string_for_js('failedtocreatetooltype', 'mod_lti');
+$PAGE->set_title("{$SITE->shortname}: " . get_string('configuration', 'block_punchy'));
 $output = $PAGE->get_renderer('block_punchy');
 
 

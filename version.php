@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2022070401;
+$plugin->version = 2022070403;
 $plugin->requires = 2016052300;
-$plugin->release = '1.0.1';
+$plugin->release = '1.2.0';
 $plugin->component = 'block_punchy';
 $plugin->maturity = MATURITY_STABLE;

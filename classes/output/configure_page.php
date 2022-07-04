@@ -17,7 +17,7 @@
 
 namespace block_punchy\output;
 
-//require_once($CFG->dirroot.'/blocks/punchy/locallib.php');
+require_once($CFG->dirroot.'/blocks/punchy/locallib.php');
 
 use moodle_url;
 use renderable;
@@ -35,7 +35,13 @@ class configure_page implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
+        global $DB;
+
+        $licences = get_licences();
+
         $data = new stdClass();
+        $data->licences = $licences;
+
         return $data;
     }
 }
