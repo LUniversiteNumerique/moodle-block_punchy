@@ -35,7 +35,7 @@ if ($ADMIN->fulltree) {
         </div>
     </div>
     EOD;
-  
+
     $settings->add(new admin_setting_heading('block_punchy', new lang_string('configuration_settings', 'block_punchy') .
         null, $template));
 }

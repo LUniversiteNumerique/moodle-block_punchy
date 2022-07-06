@@ -22,32 +22,29 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 require_once("$CFG->dirroot/blocks/punchy/locallib.php");
 
 class block_punchy extends block_base
 {
-    public function init()
-    {
+    public function init() {
         $this->title = get_string('defaulttitle', 'block_punchy');
     }
 
-    public function instance_allow_multiple()
-    {
+    public function instance_allow_multiple() {
         return false;
     }
 
-    public function has_config()
-    {
+    public function has_config() {
         return true;
     }
 
-    public function instance_allow_config()
-    {
+    public function instance_allow_config() {
         return true;
     }
 
-    public function get_content()
-    {
+    public function get_content() {
         $this->content = new stdClass();
         $image = $this->config && $this->config->image ? $this->config->image : 'unit-punchy';
         $licenceid = $this->config && $this->config->licence ? $this->config->licence : null;
@@ -77,8 +74,7 @@ class block_punchy extends block_base
         return $this->content;
     }
 
-    public function specialization()
-    {
+    public function specialization() {
         $defaulttitle = get_string('defaulttitle', 'block_punchy');
         $defaulttext = get_string('defaulttext', 'block_punchy');
 
@@ -88,8 +84,7 @@ class block_punchy extends block_base
         }
     }
 
-    public function applicable_formats()
-    {
+    public function applicable_formats() {
         return array(
             'admin' => false,
             'site-index' => false,

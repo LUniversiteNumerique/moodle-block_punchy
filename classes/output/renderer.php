@@ -26,16 +26,14 @@ namespace block_punchy\output;
 
 use plugin_renderer_base;
 
-class renderer extends plugin_renderer_base
-{
+class renderer extends plugin_renderer_base {
     /**
      *
      * @param content $output
      *
      * @return string html for the page
      */
-    public function render_content(content $output)
-    {
+    public function render_content(content $output) {
         $data = $output->export_for_template($this);
         return parent::render_from_template('block_punchy/content', $data);
     }

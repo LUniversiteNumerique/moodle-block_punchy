@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die;
 
 function cc_add_licence($licence) {
     global $DB;
-    print_r($licence);
+
     if ($licence->licencename && $licence->licenceurl && $licence->licenceimage) {
         $id = $DB->insert_record('block_punchy_licences', $licence);
 
@@ -43,7 +43,7 @@ function get_licences() {
 
     $licences = $DB->get_records('block_punchy_licences');
     $items = [];
-    foreach($licences as $licence) {
+    foreach ($licences as $licence) {
         array_push($items, (array) $licence);
     }
     return $items;
@@ -65,7 +65,7 @@ function get_licences_names() {
 
     $licences = $DB->get_records('block_punchy_licences');
     $items = [];
-    foreach($licences as $licence) {
+    foreach ($licences as $licence) {
         $items[$licence->id] = $licence->licencename;
     }
     return $items;

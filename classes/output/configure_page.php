@@ -24,6 +24,8 @@
 
 namespace block_punchy\output;
 
+defined('MOODLE_INTERNAL') || die;
+
 require_once($CFG->dirroot.'/blocks/punchy/locallib.php');
 
 use moodle_url;
