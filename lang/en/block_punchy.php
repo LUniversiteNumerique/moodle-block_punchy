@@ -30,8 +30,8 @@ $string['defaulttitle'] = 'Partageons L\'Université Numérique et des Cursus HY
 $string['defaulttext'] = '<p>A project of the Digital University allied to a consortium of partners:<p>
 <ul>
     <li>To meet a strong demand for easily reusable hybrid training materials</li>
-    <li>To initiate a general, systemic and collective approach aimed at the creation and sharing of digital educational 
-    resources with a large potential for reuse, revision and adaptation to various contexts</li>
+    <li>To initiate a general, systemic and collective approach aimed at the creation and sharing of digital educational
+     resources with a large potential for reuse, revision and adaptation to various contexts</li>
 </ul>';
 $string['imagealt'] = 'Logos of France Relance, Government of France, L\'Université Numérique, Fondation UNIT, European Union';
 $string['image'] = 'Image of the block';

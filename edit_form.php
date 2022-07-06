@@ -22,12 +22,13 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 require_once("$CFG->dirroot/blocks/punchy/locallib.php");
 
-class block_punchy_edit_form extends block_edit_form
-{
-    protected function specific_definition($mform)
-    {
+class block_punchy_edit_form extends block_edit_form {
+
+    protected function specific_definition($mform) {
         // Titre de l'en-tête de section selon le fichier de langue.
         $mform->addElement('header', 'config_header', get_string('blocksettings', 'block'));
 
