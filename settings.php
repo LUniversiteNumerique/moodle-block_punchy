@@ -24,12 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+require_once("$CFG->dirroot/blocks/punchy/locallib.php");
+
 if ($ADMIN->fulltree) {
     $configureurl = "{$CFG->wwwroot}/blocks/punchy/configure.php?action=add&amp;sesskey={$USER->sesskey}";
     $configurestr = get_string('configuration', 'block_punchy');
 
     $template = <<< EOD
-    <div class="yui-content">
+    <div class="yui-content mb-5">
         <div>
             <div><a style="margin-top:.25em" href="{$configureurl}">{$configurestr}</a></div>
         </div>
@@ -38,4 +40,12 @@ if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_heading('block_punchy', new lang_string('configuration_settings', 'block_punchy') .
         null, $template));
+    
+    $settings->add(new admin_setting_configselect(
+        'block_punchy/default_licence',
+        new lang_string('default_licence', 'block_punchy'),
+        new lang_string('default_licence_desc', 'block_punchy'),
+        null,
+        get_licences_names())
+    );
 }
