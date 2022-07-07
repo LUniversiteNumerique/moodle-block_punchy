@@ -47,7 +47,8 @@ class block_punchy extends block_base
     public function get_content() {
         $this->content = new stdClass();
         $image = $this->config && $this->config->image ? $this->config->image : 'unit-punchy';
-        $licenceid = $this->config && $this->config->licence ? $this->config->licence : null;
+        $defaultlicence = get_config('block_punchy', 'default_licence');
+        $licenceid = $this->config && $this->config->licence ? $this->config->licence : $defaultlicence;
         $text = get_string('defaulttext', 'block_punchy');
 
         if (!empty($this->config->text['text'])) {

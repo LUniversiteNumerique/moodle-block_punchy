@@ -40,7 +40,6 @@ if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_heading('block_punchy', new lang_string('configuration_settings', 'block_punchy') .
         null, $template));
-
     
     $settings->add(new admin_setting_configselect(
         'block_punchy/default_licence',
