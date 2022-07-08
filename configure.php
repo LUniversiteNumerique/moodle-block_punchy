@@ -39,7 +39,7 @@ if ($configurelicenceparam && $configureimageparam) {
     $licence->licencename = $configurenameparam;
     $licence->licenceurl = $configurelicenceparam;
     $licence->licenceimage = $configureimageparam;
-    cc_add_licence($licence);
+    add_licence($licence);
 }
 
 $pageurl = new moodle_url('/blocks/punchy/configure.php');
