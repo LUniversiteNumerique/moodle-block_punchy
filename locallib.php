@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-function cc_add_licence($licence) {
+function add_licence($licence) {
     global $DB;
 
     if ($licence->licencename && $licence->licenceurl && $licence->licenceimage) {
