@@ -50,3 +50,4 @@ $string['licence'] = 'Licence';
 $string['licenceofthecontent'] = 'Licence of the content';
 $string['errorinsertingrecord'] = 'Error trying to insert the record';
 $string['errordeletingrecord'] = 'Error trying to delete the record';
+$string['config:author'] = 'Author';
